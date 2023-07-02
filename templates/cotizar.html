@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotizar Fabricacion Ventanas</title>
+</head>
+<body>
+    <h1>Cotizar Fabricacion Ventanas</h1>
+    <form action="/cotizar" method="POST">
+        <label for="modelo">Modelo Ventana</label>
+        <select name="modelo" >
+            {%for modelo in modelos%}
+                <!--Una lista de 4 tuplas, de cada tupla toma la primera [0] -->
+                <option value="{{modelo[0]}}">{{modelo[0]}}</option>
+            {%endfor%}
+        </select>
+        <br>
+        <label for="tipo_aluminio">Tipo Aluminio</label>
+        <select name="tipo_aluminio" >
+            {%for tipo in aluminio%}
+                <!--Una lista de 4 tuplas, de cada tupla toma la primera [0] -->
+                <option value="{{tipo[0]}}">{{tipo[0]}}</option>
+            {%endfor%}
+        </select>
+        <br>
+        <label for="tipo_vidrio">Tipo Vidrio</label>
+        <select name="tipo_vidrio" >
+            {%for tipo in vidrio%}
+                <!--Una lista de 4 tuplas, de cada tupla toma la primera [0] -->
+                <option value="{{tipo[0]}}">{{tipo[0]}}</option>
+            {%endfor%}
+        </select>
+        <br>
+        <label for="esmerilado">Desea el vidrio esmerilado</label>
+        <br>
+        Si: <input type="radio" name="esmerilado" value="si" checked>
+        No: <input type="radio" name="esmerilado" value="no">
+        <br>
+        <label for="ancho">Ancho de la ventana: </label> <input type="number" min="1" max="1000" value="12" name="ancho"><br>
+        <label for="alto">Alto de la ventana: </label> <input type="number" min="1" max="1000" value="90" name="alto"><br>
+        <label for="cantidad">Cantidad de ventanas: </label> <input type="number" min="1" max="1000" value="1" name="cantidad"><br>
+        <button type="submit" name="cotizar">Cotizar</button>
+    </form>
+    <br>
+    <a href="/salir">Salir</a>
+</body>
+</html>

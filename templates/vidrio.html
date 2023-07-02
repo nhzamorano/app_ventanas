@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administracion tabla vidrio</title>
+</head>
+<body>
+    <h1>Administracion tabla vidrio</h1>
+    <form action="/vidrio" method="POST">
+        <select name="tipo_vidrio" >
+            <option value="Azul">Azul</option>
+            <option value="Bronce">Bronce</option>
+            <option value="Transparente">Transparente</option>
+        </select>
+        <br>
+        <label for="costo">Costo</label>
+        <input type="text" name="costo" required placeholder="costo vidrio">
+        <br>
+        <button type="submit" name="enviar">Enviar</button>
+    </form>
+</body>
+</html>

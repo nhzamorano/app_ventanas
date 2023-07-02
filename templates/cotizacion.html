@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotizacion</title>
+</head>
+<body>
+    {%if cotizacion[0] != 0%}
+    <h1>COMPAÑIA PQR</h1>
+    <h2>Fabricacion de Ventanas</h2>
+    <h3>Cotizacion</h3>
+    <p>Modelo ventana: {{datos[0]}} cantidad de naves: {{cotizacion[0]}} </p>
+    <p>Tipo de aluminio: {{datos[1]}}</p>
+    <p>Tipo de vidrio: {{datos[2]}} Esmerilado: {{datos[3]}}</p>
+    <p>Ventana: <b>{{datos[4]}}cm</b> de ancho por {{datos[5]}}cm de alto </p>
+    <table border="2">
+        <thead>
+          <tr>
+            <th>Detalle</th>
+            <th>Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>+Costo del Aluminio</td>
+            <td>${{cotizacion[1]}}</td>
+          </tr>
+          <tr>
+            <td>+Costo del vidrio</td>
+            <td>${{cotizacion[2]}}</td>
+          </tr>
+          <tr>
+            <td>+Costos adicionales (Esmerilado, Esquinas, Chapas)</td>
+            <td>${{cotizacion[3]}}</td>
+          </tr>
+          <tr>
+            <td>=Total costo por panel</td>
+            <td>${{cotizacion[4]}}</td>
+          </tr>
+          <tr>
+            <td>*Numero de paneles por ventana</td>
+            <td>{{cotizacion[0]}}</td>
+          </tr>
+          <tr>
+            <td>=Costo de los {{cotizacion[0]}} panel(es) de la ventana</td>
+            <td>${{cotizacion[5]}}</td>
+          </tr>
+          <tr>
+            <td>*Cantidad de ventanas</td>
+            <td>{{datos[6]}}</td>
+          </tr>
+          <tr>
+            <td>=Sub-Total</td>
+            <td>${{cotizacion[6]}}</td>
+          </tr>
+          <tr>
+            <td>-Descuento</td>
+            <td>${{cotizacion[7]}}</td>
+          </tr>
+          <tr>
+            <td>+Iva</td>
+            <td>${{cotizacion[8]}}</td>
+          </tr>
+          <tr>
+            <td>=Costo total de {{datos[6]}} ventana(s) +Iva -Descuento</td>
+            <td>${{cotizacion[9]}}</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table> 
+{% endif %}
+<a href="/">Regresar</a>
+<a href="/pdf" target="_blank">Imprimir</a>
+
+</body>
+</html>

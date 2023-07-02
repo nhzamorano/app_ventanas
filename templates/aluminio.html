@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administracion Tabla Aluminio</title>
+</head>
+<body>
+    <h1>Tabla Aluminio</h1>
+    <form action="/aluminio" method="POST">
+        <select name="tipo_aluminio" >
+            <option value="Pulido">Pulido</option>
+            <option value="Lacado Brillante">Lacado Brillante</option>
+            <option value="Lacado Mate">Lacado Mate</option>
+            <option value="Anodizado">Anodizado</option>
+        </select>
+        <br>
+        <label for="costo">Costo</label>
+        <input type="number" name="costo" required placeholder="costo aluminio">
+        <br>
+        <button type="submit" name="enviar">Enviar</button>
+    </form>
+</body>
+</html>
